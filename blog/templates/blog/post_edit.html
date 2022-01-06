@@ -1,9 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h2>New post</h2>
+    <h5 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 30px;">افزودن پست جدید</h5>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default" style="background-color: #007bff; width: 10rem; color: #fff; border: none;">
+            ذخیره
+        </button>
     </form>
 {% endblock %}

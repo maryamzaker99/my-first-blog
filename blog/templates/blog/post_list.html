@@ -2,12 +2,14 @@
 
 {% block content %}
     {% for post in posts %}
-        <article class="post">
-            <time class="date">
-                {{ post.published_date }}
-            </time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </article>
+        <div class="card mb-4" >
+            <div class="card-body">
+                <h5 style="font-size: 2rem; font-weight: bold;"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+                <p class="card-text text-muted h6" style="direction: rtl;">{{ post.published_date }}</p>
+
+                <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">بیشتر &rarr;</a>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
